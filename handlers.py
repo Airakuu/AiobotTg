@@ -1,24 +1,20 @@
 from aiogram import F,Router
 from aiogram.types import Message
 from aiogram.filters.command import Command, CommandStart 
+import keyboard as kb
 
 user = Router()
 @user.message(CommandStart())
 async def cmd_start(message: Message):
-    await message.answer('Привет, рад что ты со мной!')
+    await message.answer('Привет, рад что ты со мной!', reply_markup=kb.menu)
 
-@user.message(F.text == 'Привет')
+@user.message(F.text == 'Каталог')
+async def cmd_hello(message: Message):
+    await message.answer('Выберите раздел каталога', reply_markup=kb.catalog)
+    
+@user.message(F.text == 'Секрет')
 async def cmd_hello(message: Message):
     await message.answer('Здравствуй, я бот на aiogram 3.0!')
-
-@user.message(F.photo)
-async def cmd_photo(message: Message):
-    await message.answer('Ты отправил фото, его id: ' + message.photo[-1].file_id)
-    await message.answer_photo(message.photo[-2].file_id)
-  
-@user.message(Command('help'))
-async def cmd_help(message: Message):
-    await message.answer('Ты нажал помощь!')
 
 @user.message()
 async def echo(message: Message):
