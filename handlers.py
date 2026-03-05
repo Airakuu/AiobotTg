@@ -1,6 +1,6 @@
 from aiogram import F,Router
-from aiogram.types import Message
-from aiogram.filters.command import Command, CommandStart 
+from aiogram.types import Message, CallbackQuery
+from aiogram.filters.command import Command, CommandStart
 import keyboard as kb
 
 user = Router()
@@ -15,6 +15,11 @@ async def cmd_hello(message: Message):
 @user.message(F.text == 'Секрет')
 async def cmd_hello(message: Message):
     await message.answer('Здравствуй, я бот на aiogram 3.0!')
+
+@user.callback_query(F.data.startswith('brand_'))
+async def cmd_brand(callback: CallbackQuery):
+    brand = callback.data.split('_')[1]
+    await callback.message.answer(f'Вы выбрали бренд {brand.capitalize()}')
 
 @user.message()
 async def echo(message: Message):
