@@ -17,7 +17,7 @@ async def cmd_help(message: Message):
 async def echo(message: Message):
     await message.send_copy(chat_id=message.chat.id)
 
-async def main():
+'''async def main():
     await dp.start_polling(bot)
     
 if __name__ == "__main__":
@@ -25,4 +25,4 @@ if __name__ == "__main__":
         import asyncio
         asyncio.run(main())
     except (KeyboardInterrupt):
-        pass
+        pass'''
