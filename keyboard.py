@@ -12,8 +12,8 @@ menu = ReplyKeyboardMarkup(
 
 catalog = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text='Nike', callback_data='brand_nike')],
-        [InlineKeyboardButton(text='Adidas', callback_data='brand_adidas')],
+        [InlineKeyboardButton(text='Секрет?', url='https://www.youtube.com/watch?v=PYu58TDDkBc')],
+        [InlineKeyboardButton(text='Кнопка для Лёхи', url='https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1')],
         [InlineKeyboardButton(text='Reebok', callback_data='brand_reebok')]
     ]
 )
