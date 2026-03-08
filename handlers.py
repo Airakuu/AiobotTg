@@ -29,7 +29,7 @@ async def reg_contact(message: Message, state: FSMContext):
     
 @user.message(Reg.phone)
 async def reg_phone(message: Message):
-    await message.answer('Отправьте номер телефона по кнопке ниже')
+    await message.answer('Отправьте номер телефона по кнопке ниже') # Сука, ебучие состояния, минус час жизни
 
     
 @user.message(F.text == 'Каталог')

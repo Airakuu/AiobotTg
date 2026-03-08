@@ -4,7 +4,7 @@ from handlers import user
 from config import TOKEN
 
 async def main():
-    bot = Bot(token=TOKEN)
+    bot = Bot(token=TOKEN) #импорт токена из config.py, чтобы не светить его в открытом коде(config.py добавлен в .gitignore)
     dp = Dispatcher()
     dp.include_router(user)
     await dp.start_polling(bot)
