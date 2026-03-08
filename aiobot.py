@@ -1,7 +1,7 @@
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from handlers import user
-from token import TOKEN
+from config import TOKEN
 
 async def main():
     bot = Bot(token=TOKEN)

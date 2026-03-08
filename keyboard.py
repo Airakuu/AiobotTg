@@ -17,3 +17,10 @@ catalog = InlineKeyboardMarkup(
         [InlineKeyboardButton(text='Reebok', callback_data='brand_reebok')]
     ]
 )
+
+get_number = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text='Отправить номер', request_contact=True)]
+    ],
+    resize_keyboard=True
+)
