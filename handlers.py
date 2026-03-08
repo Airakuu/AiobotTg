@@ -19,6 +19,7 @@ async def cmd_hello(message: Message):
 @user.callback_query(F.data.startswith('brand_'))
 async def cmd_brand(callback: CallbackQuery):
     brand = callback.data.split('_')[1]
+    await callback.answer(None)
     await callback.message.answer(f'Вы выбрали бренд {brand.capitalize()}')
 
 @user.message()
