@@ -15,3 +15,5 @@ __pycache__/
 
 # system files
 .DS_Store
+
+token.py

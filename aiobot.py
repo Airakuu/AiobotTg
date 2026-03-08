@@ -1,9 +1,10 @@
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from handlers import user
+from token import TOKEN
 
 async def main():
-    bot = Bot(token='8629283156:AAFQBK42zJC6x1uFmDL6fJHNS4vKcFj-YPE')
+    bot = Bot(token=TOKEN)
     dp = Dispatcher()
     dp.include_router(user)
     await dp.start_polling(bot)
