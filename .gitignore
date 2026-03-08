@@ -16,4 +16,5 @@ __pycache__/
 # system files
 .DS_Store
 
-config.py
+# файл с токеном бота, добавлен в .gitignore, чтобы не светить токен в открытом коде
+config.py 
